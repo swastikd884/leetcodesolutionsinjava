@@ -1,0 +1,18 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int k = 1;
+        for(int traversalptr = 1; traversalptr < nums.length ; traversalptr++){
+            //if(traversalptr == 1){
+                //nums[k] = nums[traversalptr-1];
+            //}
+            if(nums[traversalptr]==nums[traversalptr-1]){
+                continue;
+            }
+            else{
+                nums[k] = nums[traversalptr];
+                k=k+1;
+            }
+        }
+        return k;
+    }
+}
