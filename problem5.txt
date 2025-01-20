@@ -1,0 +1,30 @@
+class Solution {
+    public boolean isPallindrome(String str){
+        int i = 0;
+        int j = str.length()-1;
+        while(i<j){
+            if(str.charAt(i)!= str.charAt(j)){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+    public String longestPalindrome(String s) {
+        int maxlen=0;
+        String longestpallindromicsubstring = "";
+        for (int i = 0; i < s.length();i++){
+            for (int j = i; j < s.length();j++){
+                String substr = s.substring(i,j+1);
+                //String longestpallindromicsubstring;
+                if(isPallindrome(substr) && substr.length() > maxlen ){
+                    longestpallindromicsubstring = substr;
+                    maxlen = substr.length();
+                }
+            }
+        }
+        return longestpallindromicsubstring;
+        
+    }
+}
